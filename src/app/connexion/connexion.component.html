@@ -1,0 +1,17 @@
+<div style = "margin: auto; width: 30%; margin-top: 100px;">
+    <div class="card p-4 z-depth-2">
+        <div class="alert alert-danger">
+           {{msgErr}} 
+        </div>
+        <form #connection="ngForm"(ngSubmit)="connexion(connection.value)">
+            <div class="md-form">
+                <input type="text" class="form-control" placeholder="login" name="login" ngModel> 
+            </div>
+            <div class="md-form">
+                <input type="password" class="form-control" placeholder="password" name="password" ngModel>
+            </div>
+            <button class="btn-secondary btn-block btn-sm">connexion</button>
+            <!-- <p class="text-danger text-center">{{msgErr}}</p> -->
+        </form>
+    </div>
+</div>

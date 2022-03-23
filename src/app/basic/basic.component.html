@@ -1,0 +1,36 @@
+<div class="container">
+    
+<br>
+  <div  class="row"> 
+    <div class="col-sm-4">
+      <p class="text-warning"> Binding property et event </p>
+        
+<div class="md-form">
+  <input type="text" class="form-control" value="{{name}}">
+  <button (click)="changeName()" class="btn btn-primary btn-sm btn-block"> valider</button>
+</div>
+    </div>
+    <div class="col-sm">
+      <p class="text-warning"> Template attribut</p>
+      <div class="">
+        <div class="">
+          <div class="md-form">
+          <input type="text" class="form-control" #data>
+          <button (click)="recup(data.value)" class="btn btn-primary btn-sm btn-block"> valider</button>
+        </div>
+        </div>
+      </div>
+      <div class="">
+        <p>le contenu de la zone de saisie:{{info}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+     <p class="text-warning">Binding bi directionnel </p> 
+     <div class="md-form">
+      <input type="text" class="form-control" [(ngModel)]="name">
+    </div>
+    </div>
+  </div>
+
+  <h4 class="grey-text">{{debut}}</h4>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+    <br>
+    <br>
+    <button (click)="openNewUserModal()" mat-mini-fab aria-label="Example icon-button with a heart icon">
+
+        <mat-icon>add</mat-icon>
+      </button>
+      <br>
+    <div style="margin: auto;width: 50%;">
+        <div>
+            <form #membre="ngForm"(ngSubmit)="createMembre(membre.value)">
+            <div class="md-form">
+                <label for="">Nom</label>
+                <input type="text" name="nom" class="form-control" ngModel="">
+            </div>
+            <div class="md-form">
+                <label for="">Ville</label>
+                <input type="text" name="ville" class="form-control"ngModel="">
+            </div>
+            <div class="md-form">
+                <label for="">Age</label>
+                <input type="text" name="age" class="form-control" ngModel="">
+            </div>
+            <button class="btn btn-secondary btn-sm btn-block">Valider</button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <p class="text-cebter">Formulaire pré-rempli</p>
+
+    <div style="margin: auto;width: 50%;">
+        <div>
+            <form (ngSubmit)="  createNewMembre()">
+            <div class="md-form">
+                <label for="">Nom</label>
+                <input type="text" name="nom" class="form-control" [(ngModel)]="user.nom">
+            </div>
+            <div class="md-form">
+                <label for="">Ville</label>
+                <input type="text" name="ville" class="form-control"[(ngModel)]="user.ville">
+            </div>
+            <div class="md-form">
+                <label for="">Age</label>
+                <input type="text" name="age" class="form-control" [(ngModel)]="user.age">
+            </div>
+            <button class="btn btn-secondary btn-sm btn-block">Valider</button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <p class="text-cebter">Formulaire pré-rempli avec control</p>
+
+    <div style="margin: auto;width: 50%;">
+        <div>
+            <form #newMembre="ngForm" (ngSubmit)="createNewMembre()">
+            <div class="md-form">
+                
+                <label for="">Nom</label>
+                <input type="text" name="nom" class="form-control" required [(ngModel)]="user.nom" #nomAction ="ngModel">
+                <p [hidden]="nomAction.valid" class="text-danger">saiser le nom</p>
+            </div>
+            <div class="md-form">
+                <label for="">Ville</label>
+                <input type="text" name="ville" class="form-control" required [(ngModel)]="user.ville"  #villeAction ="ngModel">
+            </div>
+            <div class="md-form">
+                <label for="">Age</label>
+                <input type="text" name="age" class="form-control" required [(ngModel)]="user.age"  #ageAction ="ngModel">
+            </div>
+            <button [disabled] = "!newMembre.form.valid"  class="btn btn-secondary btn-sm btn-block">Valider</button>
+            </form>
+        </div>
+    </div>
+
+</div>

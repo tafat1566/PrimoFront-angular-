@@ -1,0 +1,44 @@
+<div class="container">
+   <p class="text-warning">Une liste des memebre d'ESI le :<strong></strong> </p> 
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>ville</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of memebres">
+                <td>{{m.nom}}</td>
+                <td>{{m.ville}}</td>
+                <td>{{m.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div class="div">
+        <div class="row"*ngIf="visible">
+            <div class="col-sl-6">
+                <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, 
+                    laudantium ipsam molestias consectetur, fuga doloremque eius magni soluta distinctio obcaecati magnam veritatis veniam quod, 
+                    quasi ea quibusdam tenetur doloribus provident.</p>
+            </div>
+            <div class="col-sl-6">
+                <p class="grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, 
+                    laudantium ipsam molestias consectetur, fuga doloremque eius magni soluta distinctio obcaecati magnam veritatis veniam quod, 
+                    quasi ea quibusdam tenetur doloribus provident.</p>
+            </div>
+
+        </div>
+        <div class="text-center" *ngIf="!visible">
+            <button (click)="showHide()" class="btn btn-primary"> Afficher</button>
+           </div>
+
+           <div class="text-center" *ngIf="visible">
+            <button (click)="showHide()" class="btn btn-danger"> Cacher</button>
+           </div>
+    </div>
+    <h3 class="gery-text">{{ biduleService.test}}</h3>
+</div>

@@ -1,0 +1,30 @@
+
+
+<div class="">
+    <h1 class="text-info text-center"> Bonjour {{name}} </h1>
+    <div class="text-center" *ngIf="authService.isConnected()">
+</div>
+ <ul class="nav purple-gradient py-4 mb-4 mb-md-0 font-weight-bold z-depth-1 nav fill w-100">
+      <li class="nav-item ">
+        <a class="nav-link active withe-text" routerLink="basic" routerLinkActive="lien-active">Pour le basic</a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link active withe-text" routerLink="autres" routerLinkActive="lien-active">Pour aller plus loin</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link active withe-text" routerLink="new-membre" routerLinkActive="lien-active">Creer un memebre</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link active withe-text" routerLink="todo" routerLinkActive="lien-active">Les todos</a>
+      </li>
+
+      <li class="nav-item ">
+        <a class="nav-link active withe-text" (click)="authService.logout()" routerLinkActive="lien-active"><i class="fas fa-power-off"></i></a>
+      </li>
+
+    </ul>
+</div>
+
+<router-outlet></router-outlet>
+
